@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cyber Mission: un juego educativo de acertijos de ciberseguridad.">
+  <title> Hack the School</title>
+  <link rel="stylesheet" href="css/style (1).css">
+</head>
+<body>
+  <div class="scanlines" aria-hidden="true"></div>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand"><span class="brand-icon"></span>  <span class="accent">MISSION</span></div>
+      <div class="status"><span class="status-dot"></span> HACK .</div>
+    </header>
+
+    <section id="home" class="panel hero">
+      <div class="eyebrow">/// PROTOCOLO DE EMERGENCIA 07</div>
+      <h1> <span class="accent">Hack the School</span></h1>
+      <p class="warning">ADVERTENCIA: se detectó una actividad sospechosa en la red escolar.</p>
+      <p>El sistema de seguridad está bloqueado. Resolvé los desafíos de ciberseguridad para restaurar el acceso y completar la misión.</p>
+      <div class="terminal-line"><span>&gt;</span> Esperando instrucciones<span class="cursor">_</span></div>
+      <button id="startBtn" class="btn primary">[ INICIAR MISIÓN ]</button>
+      <button id="scoresBtn" class="btn secondary">[ VER PUNTAJE ]</button>
+      <p class="tiny">SIMULACIÓN EDUCATIVA · No se accede a sistemas reales.</p>
+    </section>
+
+    <section id="identity" class="panel hidden">
+      <div class="eyebrow">/// IDENTIFICACIÓN</div>
+      <h2>&gt; IDENTIFICATE, JUGADOR</h2>
+      <form id="identityForm">
+        <label for="playerName">NOMBRE DEL JUGADOR</label>
+        <input id="playerName" maxlength="24" placeholder="Escribí tu nombre" required autocomplete="off">
+        <label for="course">CURSO</label>
+        <input id="course" maxlength="20" placeholder="Ej.: 5° A" required autocomplete="off">
+        <button class="btn primary" type="submit">[ ENTRAR AL SISTEMA ]</button>
+      </form>
+      <button class="text-btn" data-screen="home">← Volver</button>
+    </section>
+
+    <section id="game" class="panel hidden">
+      <div class="game-head">
+        <div><div class="eyebrow">/// MISIÓN EN CURSO</div><h2 id="missionTitle">MISIÓN 01</h2></div>
+        <!-- AGREGADO: Elemento para mostrar el temporizador -->
+        <div class="timerbox">TIEMPO <strong id="timer">03:00</strong></div>
+        <div class="scorebox">PUNTOS <strong id="score">000</strong></div>
+      </div>
+      <div class="progress-track"><div id="progressBar" class="progress-bar"></div></div>
+      <div class="playerline">JUGADOR: <span id="playerLabel">---</span> <span class="divider">|</span> NIVEL <span id="levelLabel">1</span>/4</div>
+      <div class="clue-box">
+        <div class="clue-label">ARCHIVO DE PISTAS // LEER CON ATENCIÓN</div>
+        <p id="clueText"></p>
+      </div>
+      <h3 id="questionText">Encontrá la respuesta correcta.</h3>
+      <div id="answers" class="answers"></div>
+      <p id="feedback" class="feedback" aria-live="polite"></p>
+      <div class="game-actions">
+        <button id="hintBtn" class="btn secondary">[ PEDIR PISTA ]</button>
+        <button id="nextBtn" class="btn primary hidden">[ SIGUIENTE MISIÓN ]</button>
+      </div>
+      <p class="tiny">Consejo: pensá antes de responder. Cada misión enseña una forma de cuidarte en internet.</p>
+    </section>
+
+    <section id="result" class="panel hidden">
+      <div class="eyebrow">/// INFORME FINAL</div>
+      <h1><span class="accent">MISSION</span> COMPLETE</h1>
+      <p id="resultMessage">¡Buen trabajo!</p>
+      <div class="final-score"><span>PUNTAJE FINAL</span><strong id="finalScore">0</strong></div>
+      <div id="resultDetails" class="result-details"></div>
+      <button id="restartBtn" class="btn primary">[ JUGAR DE NUEVO ]</button>
+      <button id="homeBtn" class="btn secondary">[ VOLVER AL INICIO ]</button>
+    </section>
+
+    <section id="leaderboard" class="panel hidden">
+      <div class="eyebrow">/// REGISTRO LOCAL</div>
+      <h2>&gt; TABLA DE PUNTAJES</h2>
+      <p class="muted">Los resultados se guardan solamente en este navegador y dispositivo.</p>
+      <div id="scoreList"></div>
+      <button id="leaderHomeBtn" class="btn secondary">[ VOLVER ]</button>
+    </section>
+
+    <footer>CYBER MISSION <span>v1.0</span> <span class="footer-right">APRENDÉ · DETECTÁ · PROTEGETE</span></footer>
+  </main>
+  <script src="js/script.js"></script>
+
+</body>
+</html>
