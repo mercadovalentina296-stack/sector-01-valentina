@@ -1,0 +1,5 @@
+VALENTINA MERCADO:lider 
+DANIA CHINCHA:documentacion
+BRISA JANCO:testil
+LEONEL ALAMO:programador
+MARTIN QUISPE:co-liderr
